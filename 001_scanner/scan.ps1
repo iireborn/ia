@@ -13,7 +13,7 @@ Write-Host ''
 $null = Read-Host 'press enter to continue (or close this window to cancel)'
 Write-Host ''
 
-$url = 'https://github.com/iireborn/iauth/raw/refs/heads/main/001_scanner/israelauth-check.exe'
+$url = 'https://github.com/iireborn/iauth/raw/71c25c98af887e1f097b1aeabad4e68f74d0ecc9/001_scanner/israelauth-check.exe'
 $data = $null
 try { $data = (New-Object Net.WebClient).DownloadData($url) } catch { }
 if ($null -eq $data -or $data.Length -lt 1024) {

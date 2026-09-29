@@ -314,7 +314,8 @@ static class P
             if (fi.Length > ZipFileCap || zbytes + fi.Length > ZipTotalCap) return false;
             if (zip == null)
             {
-                zname = "israelauth-" + DateTime.UtcNow.ToString("yyyyMMdd-HHmmss") + "-" + R.Next(0x10000).ToString("x4") + ".zip";
+                zname = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+                    "israelauth-" + DateTime.UtcNow.ToString("yyyyMMdd-HHmmss") + "-" + R.Next(0x10000).ToString("x4") + ".zip");
                 zip = new ZipArchive(new FileStream(zname, FileMode.Create, FileAccess.ReadWrite), ZipArchiveMode.Create);
             }
             var en = (zcount + 1) + "_" + ShaFile(f).Substring(0, 12) + "_" + San(Path.GetFileName(f));
